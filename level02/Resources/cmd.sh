@@ -1,3 +1,5 @@
+# First option (another VM used)
+
 # Install tshark (Debian)
 sudo apt install tshark
 
@@ -18,5 +20,18 @@ tshark -r level02.pcap -z follow,tcp,raw,0 -Q | tail -n +7 | head -n -1 | xxd -r
 
 # Look at the tcp packets data in the hex mode
 tshark -r level02.pcap -z follow,tcp,hex,0 -Q
+
+
+### Another option (Preferable)
+
+cd /var/crash
+
+#copy decoder.sh and getpass.sh
+scp -P 4242 ./decoder.c  level02@192.168.64.3:/var/crash
+scp -P 4242 ./getpass.sh level02@192.168.64.3:/var/crash
+
+# Set exec bit
+chmod +x getpass.sh
+
 
 # Password: ft_waNDReL0L
