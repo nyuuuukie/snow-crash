@@ -22,7 +22,7 @@ tshark -r level02.pcap -z follow,tcp,raw,0 -Q | tail -n +7 | head -n -1 | xxd -r
 tshark -r level02.pcap -z follow,tcp,hex,0 -Q
 
 
-### Another option (Preferable)
+### Another option
 
 cd /var/crash
 
