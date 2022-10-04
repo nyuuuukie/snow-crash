@@ -3,7 +3,7 @@
 The system welcoming us with this message: `You have new mail.`
 
 ```bash
-$ > cat $MAIL
+$ cat $MAIL
 
 */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
 ```

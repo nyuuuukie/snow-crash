@@ -3,6 +3,8 @@ cd /var/crash
 
 # Copy source code
 vim decode.c
+# or
+scp -P 4242 ./decode.c level02@192.168.64.3:/var/crash
 
 # Compile
 gcc decode.c -o decode
