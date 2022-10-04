@@ -16,6 +16,8 @@ system("/usr/bin/env echo Exploit me")
 ...
 ```
 
+As the setuid bit is present, binary will be executed with the flag03 privileges.
+
 We see that `echo` is not called with the absolute path. <br>
 Also, the enviroment obtained from the env call. <br>
 These lead us to the idea, that we can exploit it using binary substitution.<br>

