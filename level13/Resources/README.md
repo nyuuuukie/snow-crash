@@ -4,10 +4,14 @@
 
 Look at the asm
 ```bash
-$ objdump -d level13 | nl | grep getuid
+$ objdump -d level13 | grep -A 10 getuid
 ```
 
-And then:
+As we see, after calling getuid function, the result is stored in the eax register. <br>
+This stored value is compared to 4242 (0x1092), and if both operands are equal, <br>
+we jumping to the 80485cb. <br>
+
+The solution here is to jump manually to the position where the key could be obtained:
 ```
 $ gdb level13
 
@@ -22,8 +26,8 @@ jump *0x80485cb
 # Go to the directory with rw access
 cd /var/crash
 
-# Copy source file or upload it
-scp -P 4242 ./fake.c level02@192.168.64.3:/var/crash
+# Copy source file or upload it (do not forget to change ip address!)
+scp -P 4242 ./fake.c level13@192.168.64.3:/var/crash
 
 # Compile and link dynamic library
 gcc -fPIC -shared fake.c -o libfake.so

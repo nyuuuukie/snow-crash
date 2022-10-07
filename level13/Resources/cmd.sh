@@ -2,7 +2,7 @@
 ### Avoid check by jumping
 
 # Look at the asm
-objdump -d level13 | nl | grep getuid
+objdump -d level13 | grep -A 10 getuid
 
 gdb level13
 
@@ -17,8 +17,11 @@ jump *0x80485cb
 
 cd /var/crash
 
-# Copy source file or upload it
+# Copy source file
 vim fake.c
+ 
+# Or upload it (do not forget to change ip address!)
+scp -P 4242 ./fake.c level13@192.168.64.3:/var/crash
 
 gcc -fPIC -shared fake.c -o libfake.so
 
