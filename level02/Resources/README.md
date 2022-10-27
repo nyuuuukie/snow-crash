@@ -53,3 +53,6 @@ chmod +x getpass.sh
 This script uses tcpdump that available inside the iso. <br>
 It is getting all the ip packets data, removing unnecessary ip & tcp headers <br>
 And converts the result into readable password using self-writed decoder.
+
+#### References
+- [Using tcpdump](https://habr.com/ru/company/alexhost/blog/531170/)
