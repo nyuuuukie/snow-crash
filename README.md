@@ -1,7 +1,7 @@
 # snow_crash
 
 This project is an introduction to the cybersecurity branch.
-The goal is to pass all the 14 levels:
+The goal is to pass all the 15 levels:
 
 | Level | Exploit\Technique\Breach |
 | ----- | ------- |
